@@ -24,3 +24,21 @@ func printTotalPrice(price: Int, count: Int) {
 
 printTotalPrice(price: 1500, count: 5)
 
+
+// 파라미터 default 값 지정
+func printTotalPriceWithDefaultValue(price: Int = 1500, count: Int) {
+    print("Total Price: \(price * count)")
+}
+
+printTotalPriceWithDefaultValue(count: 5)
+printTotalPriceWithDefaultValue(count: 10)
+printTotalPriceWithDefaultValue(price: 2000, count: 1)
+
+
+// function 리턴 값 자료형 지정
+func totalPrice(price: Int, count: Int) -> Int {
+    let totalPrice = price * count
+    return totalPrice
+}
+let calculatedPrice = totalPrice(price: 10000, count: 77)
+
