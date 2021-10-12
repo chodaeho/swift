@@ -46,3 +46,22 @@ printParsedIntGuard(from: "100")
 carName = nil
 let myCarName: String = carName ?? "벤츠"
 print(myCarName)
+
+// 도전과제
+// 1. 음식이름을 담는 변수를 작성(String?)
+let favoriteFood: String? = "순대국"
+// 2. 옵셔널 바인딩을 이용해서 값을 확인해 보기
+if let foodName = favoriteFood {
+    print(foodName)
+} else {
+    print("음식 이름 없음")
+}
+// 3. 닉네임을 받아서 출력하는 함수 만들기, 조건 입력 파라미터는 String?
+func printNickName(name: String?) {
+    guard let nickname = name else {
+        print("nickname 만드시오")
+        return
+    }
+    print(nickname)
+}
+printNickName(name: "슈퍼맨")
