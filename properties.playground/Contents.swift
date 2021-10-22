@@ -3,8 +3,29 @@ import Cocoa
 struct Person {
     // Stored Property
     // 객체 안에 값을 저장할 때 사용
-    var firstName: String
+    var firstName: String {
+        // 값이 변하기 직전 시점을 알 수 있음.
+        // didSet 전에 willSet이 먼저 작동함.
+        willSet {
+            print("willSet : \(firstName) --> \(newValue)")
+        }
+        
+        // didSet을 이용해서 값이 바뀐 시점을 알 수 있음.
+        // Stored Property에서만 가능
+        didSet {
+            print("didSet : \(oldValue) --> \(firstName)")
+        }
+    }
     var lastName: String
+    
+    // 인스턴스가 생성될 때 실행되기 보다는 해당 프로퍼티에 접근될 때 실행됨
+    lazy var isPopular: Bool = {
+        if fullName == "Jay Park" {
+            return true
+        } else {
+            return false
+        }
+    }()
     
     // Computed Property
     // stored property에 저장된 값을 가공 해서 사용할 때 사용
@@ -46,3 +67,5 @@ person.fullName = "Jay Park"
 person.fullName
 
 Person.isAlien
+
+person.isPopular
