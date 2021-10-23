@@ -1,5 +1,11 @@
 import Cocoa
 
+
+// 메소드 vs 프로퍼티
+// - 프로퍼티 : 호출시 저장된 값을 하나 반환한다.
+// - 메소드 : 호출시 어떤 작업을 한다.
+// 계산이 많이 필요하거나 DB 또는 파일 접근이 필요 할 시는 메소드로 하는것이 적절하고 그렇지 않다면 Computed 프로퍼티로 작성하는 것을 권장
+
 struct Person {
     // Stored Property
     // 객체 안에 값을 저장할 때 사용
@@ -18,6 +24,7 @@ struct Person {
     }
     var lastName: String
     
+    // lazy Property
     // 인스턴스가 생성될 때 실행되기 보다는 해당 프로퍼티에 접근될 때 실행됨
     lazy var isPopular: Bool = {
         if fullName == "Jay Park" {
