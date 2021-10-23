@@ -54,7 +54,7 @@ struct Person {
     }
     
     // type property
-    // 생성된 인스턴스와 상관없이 struct의 타입혹은 class의 타입 자체를 정하고 싶을때 static 키워드를 사용 하여 type property를 만들 수 있음
+    // 생성된 인스턴스와 상관없이 struct의 타입혹은 class의 타입 자체의 속성을 정하고 싶을때 static 키워드를 사용 하여 type property를 만들 수 있음
     static let isAlien: Bool = false
 }
 
