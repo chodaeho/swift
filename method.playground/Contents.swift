@@ -43,3 +43,43 @@ lec.remainSeats()
 
 Lecture.target
 Lecture.academyName()
+
+// 확장(extension)에 대한 설명 예제
+struct Math {
+    static func abs(value: Int) -> Int {
+        if value > 0 {
+            return value
+        } else {
+            return -value
+        }
+    }
+}
+
+Math.abs(value: -20)
+
+// 제곱, 반값 method 추가
+extension Math {
+    static func sqaure(value: Int) -> Int {
+        return value * value
+    }
+    static func half(value: Int) -> Int {
+        return value/2
+    }
+}
+
+Math.sqaure(value: 5)
+Math.half(value: 20)
+
+var value: Int = 10
+// apple에서 만든 Int도 확장도 가능
+extension Int {
+    func square() -> Int {
+        return self * self
+    }
+    func half() -> Int {
+        return self/2
+    }
+}
+
+value.square()
+value.half()
