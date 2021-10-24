@@ -1,6 +1,5 @@
 import Cocoa
 
-
 struct Lecture {
     var title: String
     var maxStudents: Int = 10
